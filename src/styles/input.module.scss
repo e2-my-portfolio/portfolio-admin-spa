@@ -1,0 +1,28 @@
+.input {
+    background-color: transparent;
+    display: block;
+    padding: .5rem .1rem;
+    border-color: transparent;
+    margin: 1rem;
+}
+
+.input:focus, .input:focus-visible {
+    background-color: transparent;
+    display: block;
+    padding: .5rem .1rem;
+    border-color: transparent;
+    margin: 1rem;
+}
+
+.input::selection {
+    background-color: transparent;
+    display: block;
+    padding: .5rem .1rem;
+    border-color: transparent;
+    margin: 1rem;
+}
+
+.inputContainer {
+    display: inline-flex;
+    align-items: center;
+}

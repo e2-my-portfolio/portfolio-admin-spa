@@ -77,6 +77,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font: 1.1rem Inconsolata, monospace;
+  text-shadow: 0 0 5px #C8C8C8;
 }
 
 html,
@@ -86,13 +88,37 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: black;
+  background-image: radial-gradient(
+    rgba(0, 150, 0, 0.75), black 120%
+  );
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  padding: 2rem;
+  color: white;
+  font: 1.3rem Inconsolata, monospace;
+  text-shadow: 0 0 5px #C8C8C8;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(black, 0.15),
+      rgba(black, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+  }
+}
+::selection {
+  background: #0080FF;
+  text-shadow: none;
 }
 
 a {
@@ -104,4 +130,35 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+input {
+  background-color: transparent;
+  display: block;
+  padding: .5rem .1rem;
+  border: none;
+  margin: 1rem;
+}
+
+input:focus, input:focus-visible {
+  background-color: transparent;
+  display: block;
+  padding: .5rem .1rem;
+  border: none;
+  margin: 1rem;
+}
+
+*:focus-visible, input:-internal-autofill-selected {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+input::selection {
+  background-color: transparent;
+  display: block;
+  padding: .5rem .1rem;
+  border: none;
+  margin: 1rem;
+  outline: none;
 }
